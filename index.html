@@ -86,8 +86,11 @@
 <p>ARS, K.K. ／ <a href="mailto:developer@ars-dev.co.jp">developer@ars-dev.co.jp</a></p>
 
 <h3>10. Android 版について</h3>
-<p>Android 版（Google Play で配信）には AI 機能がありません。<strong>学習テキストや音声を当社・Anthropic 社へ送信することはなく、利用者の個人情報も取得しません。</strong></p>
+<p>Android 版（Google Play で配信）には次の違いがあります。上の 1〜9 のうち、ここに書いていないことは Android 版にも当てはまります。<strong>利用者の氏名・連絡先・アカウントなどの個人情報は取得しません。</strong></p>
 <ul>
+  <li><strong>AI 機能（1.1 以降）</strong>: Android 版の AI 機能は「AI 会話」と「単語の発音への AI のひとこと」です。あなたが話して文字起こししたドイツ語テキストを、当社のバックエンドを経由して Anthropic 社の Claude API に送ります。送る前にアプリ内で内容を示して同意を得ること、同意しなければ送らないことは 4 のとおりで、「設定」→「AI機能について」から取り消せます。読解の添削など、上のほかの AI 機能は Android 版にはありません。1.0 には AI 機能はありません。Apple 社への送信は Android 版では行いません。</li>
+  <li><strong>不正利用の防止（Play Integrity、1.1 以降）</strong>: AI 機能を使うとき、アプリが正規のものかを確かめるため、Google LLC の Play Integrity API の判定と、アプリが端末内で作った識別子（ランダムな文字列。氏名や端末の ID とは結びつきません）を当社のバックエンドに送り、回数の制限に使います。</li>
+  <li><strong>AI の応答の報告（1.1 以降）</strong>: AI の応答のそばの旗のボタンから、不適切な内容や間違いを報告できます。報告すると、その応答の文・直前にあなたが話した文・選んだ理由・任意のひとこと・アプリの版が当社のバックエンド（Cloudflare, Inc.）に保存されます。IP アドレスや端末の識別子は保存しません。報告は AI の応答の改善と不適切な内容への対応のためだけに使います。</li>
   <li><strong>発音チェック（マイク、1.1 以降）</strong>: 単語や例文を声に出すと、端末の音声認識サービス（多くの端末では Google LLC が提供）が文字に起こし、アプリが端末内でお手本と照らして点を出します。この過程で音声が音声認識サービスの提供者のサーバーに送信される場合があります（その扱いは提供者のプライバシーポリシーに従います）。本アプリは音声も文字起こしの結果も保存せず、当社に送信することもありません。マイクの使用はボタンを押したときだけで、端末の設定からいつでも許可を取り消せます。</li>
   <li>学習の設定・進み具合・単語帳・模擬試験の結果は、端末内（Android の SharedPreferences）にのみ保存され、アプリを削除すると消去されます。</li>
   <li>録音の音声（単語・例文・読解・文法、模擬試験の聴解）は、利用者が選んだときに当社の配信サーバー（Cloudflare 上の audio.ars-develop.workers.dev）から取得して端末に保存します。この通信に利用者を識別する情報は含めません。</li>
@@ -141,8 +144,11 @@
 <p>ARS, K.K. — <a href="mailto:developer@ars-dev.co.jp">developer@ars-dev.co.jp</a></p>
 
 <h3>10. Android version</h3>
-<p>The Android version (distributed on Google Play) has no AI features. <strong>It sends no learning text or audio to us or to Anthropic, and collects no personal information.</strong></p>
+<p>The Android version (distributed on Google Play) differs as follows. Anything in sections 1&ndash;9 not addressed here also applies to the Android version. <strong>It collects no personal information such as your name, contact details or account.</strong></p>
 <ul>
+  <li><strong>AI features (version 1.1 and later):</strong> On Android, the AI features are &ldquo;AI conversation&rdquo; and &ldquo;AI tips on word pronunciation&rdquo;. The German text you speak, as transcribed, is sent through our backend to Anthropic&rsquo;s Claude API. As described in section 4, the App explains this and asks for your consent before sending anything and sends nothing if you do not consent; you can withdraw consent in Settings &rarr; &ldquo;AI機能について&rdquo;. The other AI features above (such as reading corrections) are not in the Android version. Version 1.0 has no AI features. Nothing is sent to Apple on Android.</li>
+  <li><strong>Abuse prevention (Play Integrity, version 1.1 and later):</strong> When you use an AI feature, the App sends a Google LLC Play Integrity API verdict and an identifier the App generates on your device (a random string not linked to your name or device IDs) to our backend, to confirm the App is genuine and to enforce usage limits.</li>
+  <li><strong>Reporting AI responses (version 1.1 and later):</strong> You can report inappropriate content or mistakes with the flag button next to an AI response. A report stores the response text, the sentence you spoke just before it, the reason you chose, your optional comment, and the App version on our backend (Cloudflare, Inc.). We do not store your IP address or device identifiers. Reports are used only to improve AI responses and to deal with inappropriate content.</li>
   <li><strong>Pronunciation check (microphone, version 1.1 and later):</strong> When you read a word or example sentence aloud, your device&rsquo;s speech recognition service (provided by Google LLC on most devices) converts it to text, and the App compares it with the model on your device to give a score. Audio may be sent to the speech recognition provider&rsquo;s servers in this process and is handled under that provider&rsquo;s privacy policy. The App does not store the audio or the transcript and does not send them to us. The microphone is used only when you tap the button, and you can revoke the permission at any time in your device settings.</li>
   <li>Settings, progress, the word book and mock-exam results are stored only on your device (Android SharedPreferences) and are removed when you uninstall the app.</li>
   <li>Recorded audio (words, examples, reading, grammar and mock-exam listening) is downloaded from our distribution server (audio.ars-develop.workers.dev on Cloudflare) when you choose to, and kept on your device. These requests carry no information that identifies you.</li>
