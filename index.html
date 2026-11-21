@@ -35,7 +35,7 @@
 
 <h1>プライバシーポリシー / Privacy Policy</h1>
 <p class="meta">SprichNova ／ 提供者: ARS, K.K.</p>
-<p class="meta">最終更新日 / Last updated: 2026-11-15 ／ お問い合わせ: <a href="mailto:developer@ars-dev.co.jp">developer@ars-dev.co.jp</a></p>
+<p class="meta">最終更新日 / Last updated: 2026-11-22 ／ お問い合わせ: <a href="mailto:developer@ars-dev.co.jp">developer@ars-dev.co.jp</a></p>
 
 <hr>
 
@@ -47,7 +47,7 @@
 <h3>2. 取得・処理する情報</h3>
 <ul>
   <li><strong>学習コンテンツ（テキスト）</strong>: 会話練習や読解の解答など、ユーザーが入力・生成したテキストを、AIによるフィードバック生成のため当社のバックエンドを経由して Anthropic 社の Claude API に送信します。</li>
-  <li><strong>音声（マイク）</strong>: 発音練習のためにマイクで録音した音声を使用します。音声認識（文字起こし）には Apple の音声認識機能を利用し、この過程で音声が Apple のサーバーに送信される場合があります。録音した音声ファイルは端末内にのみ保存され、当社がこれを収集・保存することはありません。</li>
+  <li><strong>音声（マイク）</strong>: 発音の採点・AI 会話のためにマイクで録音した音声を使用します。発音の採点（iOS 版 1.7・Android 版 1.2 から）は端末の中の音声認識モデルで行い、音声も結果も端末の外に送りません（モデルは初回に当社のサーバーからダウンロードします）。AI 会話の文字起こしには Apple の音声認識機能を利用し、この過程で音声が Apple のサーバーに送信される場合があります。録音音声を当社が収集・保存することはありません。</li>
   <li><strong>アプリ内設定・学習進捗</strong>: 学習プラン、目標、単語帳、録音、ダウンロード状態などは端末内（ローカルストレージ）にのみ保存されます。</li>
 </ul>
 
@@ -92,6 +92,7 @@
   <li><strong>不正利用の防止（Play Integrity、1.1 以降）</strong>: AI 機能を使うとき、アプリが正規のものかを確かめるため、Google LLC の Play Integrity API の判定と、アプリが端末内で作った識別子（ランダムな文字列。氏名や端末の ID とは結びつきません）を当社のバックエンドに送り、回数の制限に使います。</li>
   <li><strong>AI の応答の報告（1.1 以降）</strong>: AI の応答のそばの旗のボタンから、不適切な内容や間違いを報告できます。報告すると、その応答の文・直前にあなたが話した文・選んだ理由・任意のひとこと・アプリの版が当社のバックエンド（Cloudflare, Inc.）に保存されます。IP アドレスや端末の識別子は保存しません。報告は AI の応答の改善と不適切な内容への対応のためだけに使います。</li>
   <li><strong>発音チェック（マイク、1.1 以降）</strong>: 単語や例文を声に出すと、端末の音声認識サービス（多くの端末では Google LLC が提供）が文字に起こし、アプリが端末内でお手本と照らして点を出します。この過程で音声が音声認識サービスの提供者のサーバーに送信される場合があります（その扱いは提供者のプライバシーポリシーに従います）。本アプリは音声も文字起こしの結果も保存せず、当社に送信することもありません。マイクの使用はボタンを押したときだけで、端末の設定からいつでも許可を取り消せます。</li>
+  <li><strong>発音の採点（マイク、1.2 以降）</strong>: 単語カードで単語を言うと、端末の中の音声認識モデルが音ごとに採点します。音声も結果も端末の外に送らず、保存もしません。モデル（約 355 MB）は初回に当社のサーバー（Cloudflare）からダウンロードします。</li>
   <li>学習の設定・進み具合・単語帳・模擬試験の結果は、端末内（Android の SharedPreferences）にのみ保存され、アプリを削除すると消去されます。</li>
   <li>録音の音声（単語・例文・読解・文法、模擬試験の聴解）は、利用者が選んだときに当社の配信サーバー（Cloudflare 上の audio.ars-develop.workers.dev）から取得して端末に保存します。この通信に利用者を識別する情報は含めません。</li>
   <li>聴解（ラジオ）は、上記 4-2 と同じく Deutsche Welle の配信サーバーから直接再生します。</li>
@@ -111,7 +112,7 @@
 <h3>2. Information We Process</h3>
 <ul>
   <li><strong>Learning content (text):</strong> Text you enter or generate (e.g., conversation practice and reading answers) is sent through our backend to Anthropic's Claude API to produce AI feedback.</li>
-  <li><strong>Audio (microphone):</strong> Microphone audio is used for pronunciation practice. Speech-to-text uses Apple's speech recognition, which may transmit audio to Apple's servers. Recordings are stored only on your device; we do not collect or store them.</li>
+  <li><strong>Audio (microphone):</strong> Microphone audio is used for pronunciation scoring and AI conversation. Pronunciation scoring (iOS version 1.7 and Android version 1.2 and later) runs on an on-device speech recognition model; neither the audio nor the results leave your device (the model is downloaded once from our server). Speech-to-text for AI conversation uses Apple's speech recognition, which may transmit audio to Apple's servers. We do not collect or store your audio recordings.</li>
   <li><strong>In-app settings &amp; progress:</strong> Study plans, goals, your word list, recordings, and download state are stored only on your device (local storage).</li>
 </ul>
 
@@ -150,6 +151,7 @@
   <li><strong>Abuse prevention (Play Integrity, version 1.1 and later):</strong> When you use an AI feature, the App sends a Google LLC Play Integrity API verdict and an identifier the App generates on your device (a random string not linked to your name or device IDs) to our backend, to confirm the App is genuine and to enforce usage limits.</li>
   <li><strong>Reporting AI responses (version 1.1 and later):</strong> You can report inappropriate content or mistakes with the flag button next to an AI response. A report stores the response text, the sentence you spoke just before it, the reason you chose, your optional comment, and the App version on our backend (Cloudflare, Inc.). We do not store your IP address or device identifiers. Reports are used only to improve AI responses and to deal with inappropriate content.</li>
   <li><strong>Pronunciation check (microphone, version 1.1 and later):</strong> When you read a word or example sentence aloud, your device&rsquo;s speech recognition service (provided by Google LLC on most devices) converts it to text, and the App compares it with the model on your device to give a score. Audio may be sent to the speech recognition provider&rsquo;s servers in this process and is handled under that provider&rsquo;s privacy policy. The App does not store the audio or the transcript and does not send them to us. The microphone is used only when you tap the button, and you can revoke the permission at any time in your device settings.</li>
+  <li><strong>Pronunciation scoring (microphone, version 1.2 and later):</strong> When you say a word on a word card, an on-device speech recognition model scores each sound. Neither the audio nor the results leave your device or are stored. The model (about 355 MB) is downloaded once from our server (Cloudflare).</li>
   <li>Settings, progress, the word book and mock-exam results are stored only on your device (Android SharedPreferences) and are removed when you uninstall the app.</li>
   <li>Recorded audio (words, examples, reading, grammar and mock-exam listening) is downloaded from our distribution server (audio.ars-develop.workers.dev on Cloudflare) when you choose to, and kept on your device. These requests carry no information that identifies you.</li>
   <li>Radio plays directly from Deutsche Welle's servers, as described in 4-2.</li>
